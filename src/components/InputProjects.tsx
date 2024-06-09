@@ -1,9 +1,9 @@
-import Field from "./Field.jsx";
+import Field from "./Field.js";
 import { useState } from "react";
 import { IoMdRemove } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 
-function RegularFieldComponent({ id, title, value, handleInputChange, index }) {
+function RegularFieldComponent({ id, title, value, handleInputChange, index }: { id: string, title: string, value: string, handleInputChange: Function, index: number }) {
     return (
         <div className="regularFieldComponent">
             <label htmlFor={`${id}-${index}`}>{title}</label>
@@ -20,7 +20,7 @@ function RegularFieldComponent({ id, title, value, handleInputChange, index }) {
     )
 }
 
-function IrregularFieldComponent({ id, value, superValue, setValue, handleInputChange, bulletIndex, index }) {
+function IrregularFieldComponent({ id, value, superValue, setValue, handleInputChange, bulletIndex, index }: { id: string, value: string, superValue: any, setValue: Function, handleInputChange: Function, bulletIndex: number, index: number }) {
     const [hover, setHover] = useState(false)
     return (
         <div className="irregularFieldComponent">
@@ -38,7 +38,7 @@ function IrregularFieldComponent({ id, value, superValue, setValue, handleInputC
                     onMouseEnter={() => { setHover(!hover) }}
                     onMouseLeave={() => { setHover(!hover) }}
                     style={{
-                        transform: hover && "scale(1.5)",
+                        transform: hover ? "scale(1.5)" : undefined,
                     }} />
                 <label htmlFor={`${id}-${index}`}>Details</label>
             </div>
@@ -57,15 +57,15 @@ function IrregularFieldComponent({ id, value, superValue, setValue, handleInputC
 
 // ... rest of the code remains the same
 
-function FieldComponent({ value, setValue, index }) {
-    function handleRegularInputChange(e, i) {
+function FieldComponent({ value, setValue, index }: { value: any, setValue: Function, index: number }) {
+    function handleRegularInputChange(e: React.ChangeEvent<HTMLInputElement>, i: number) {
         const { name, value: v } = e.target;
         let prevValue = [...value];
         prevValue[i] = { ...prevValue[i], [name]: v };
         setValue(prevValue);
     }
 
-    function handleIrregularInputChange(e, i) {
+    function handleIrregularInputChange(e: React.ChangeEvent<HTMLInputElement>, i: number) {
         const { name, value: v } = e.target;
         let prevValue = [...value];
         prevValue[i].bullets[name] = v
@@ -96,8 +96,8 @@ function FieldComponent({ value, setValue, index }) {
                     handleInputChange={handleRegularInputChange}
                     index={index}
                 />
-                {value[index].bullets.map((bullet, i) => {
-                    return <IrregularFieldComponent id={i} superValue={value} value={bullet} setValue={setValue} handleInputChange={handleIrregularInputChange} bulletIndex={i} index={index} />
+                {value[index].bullets.map((bullet: string, i: number) => {
+                    return <IrregularFieldComponent id={i.toString()} superValue={value} value={bullet} setValue={setValue} handleInputChange={handleIrregularInputChange} bulletIndex={i} index={index} />
                 })}
             </div>
             <button onClick={() => {
@@ -111,7 +111,7 @@ function FieldComponent({ value, setValue, index }) {
     );
 }
 
-function InputPart({index, value, setValue}){
+function InputPart({index, value, setValue}: {index: number, value: any, setValue: Function}){
     const [hover, setHover] = useState(false)
     return (
       <div style={{
@@ -126,26 +126,26 @@ function InputPart({index, value, setValue}){
           }}
           onMouseEnter={() => {setHover(!hover)}}
           onMouseLeave={() => {setHover(!hover)}}
-          style={{
-          transform: hover && "scale(1.5)",
-          display: "block",
-          marginLeft: "auto",
-          marginRight: "10px",
-          marginTop: "10px",
-          marginBottom: "10px",
-          height: "30px",
-          width: "30px"
+            style={{
+            transform: hover ? "scale(1.5)" : undefined,
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "10px",
+            marginTop: "10px",
+            marginBottom: "10px",
+            height: "30px",
+            width: "30px"
         }}/>
         <FieldComponent value={value} setValue={setValue} index={index}/>
       </div>
     );
 }
 
-function ProjectsComponent({value, setValue}) {
+function ProjectsComponent({value, setValue}: {value: any, setValue: Function}) {
     return (
         <>
-            {value.map((item, index) => {
-                return <InputPart item={item} index={index} value={value} setValue={setValue} key={index}/>
+            {value.map((item: any, index: number) => {
+                return <InputPart index={index} value={value} setValue={setValue} key={index}/>
             })}
             <button className="newgen" onClick={() => {
                 setValue([
@@ -164,7 +164,7 @@ function ProjectsComponent({value, setValue}) {
     );
 }
 
-export default function InputProjects({ projectsInfo, setProjectsInfo }) {
+export default function InputProjects({ projectsInfo, setProjectsInfo }: { projectsInfo: any, setProjectsInfo: Function }) {
     return (
         <Field title="Projects" Component={<ProjectsComponent value={projectsInfo} setValue={setProjectsInfo} />} />
     );

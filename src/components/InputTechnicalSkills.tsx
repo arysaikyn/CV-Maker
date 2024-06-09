@@ -1,9 +1,9 @@
-import Field from "./Field.jsx";
+import Field from "./Field.js";
 
-function TechnicalSkillsComponent({value, setValue}) {
-    const handleInputChange = (field) => (e) => {
+function TechnicalSkillsComponent({value, setValue}: {value: any, setValue: any}) {
+    const handleInputChange = (field: string) => (e: { target: { value: any; }; }) => {
         console.log(field, e);
-        setValue(prevValue => ({ ...prevValue, [field]: e.target.value }));
+        setValue((prevValue: any) => ({ ...prevValue, [field]: e.target.value }));
     };
     return (
         <>
@@ -28,7 +28,7 @@ function TechnicalSkillsComponent({value, setValue}) {
 }
 
 
-export default function InputTechnicalSkills({technicalSkillsInfo, setTechnicalSkillsInfo}) {
+export default function InputTechnicalSkills({technicalSkillsInfo, setTechnicalSkillsInfo}: {technicalSkillsInfo: any, setTechnicalSkillsInfo: any}) {
     return (
         <Field title="Technical Skills" Component={<TechnicalSkillsComponent value={technicalSkillsInfo} setValue={setTechnicalSkillsInfo}/>} />
     );

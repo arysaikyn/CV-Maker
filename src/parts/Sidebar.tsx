@@ -1,5 +1,5 @@
 import "../styles/SideBarStyles.css";
-import {InputEducation, InputExperience, InputPersonal, InputProjects, InputTechnicalSkills} from "../components/InputFields.jsx";
+import {InputEducation, InputExperience, InputPersonal, InputProjects, InputTechnicalSkills} from "../components/InputFields.js";
 import {sampleEducationInfo, samplePersonalInfo, sampleExperienceInfo, sampleProjectsInfo, sampleTechnicalSkillsInfo, emptyEducationInfo, emptyPersonalInfo, emptyExperienceInfo, emptyProjectsInfo, emptyTechnicalSkillsInfo} from "./DefaultData.js";
 
 export default function Sidebar({personalInfo, educationInfo, experienceInfo, projectsInfo, technicalSkillsInfo, setPersonalInfo, setEducationInfo, setExperienceInfo, setProjectsInfo, setTechnicalSkillsInfo}){

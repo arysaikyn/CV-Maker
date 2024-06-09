@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
-export default function Field({ title, Component }) {
+export default function Field({ title, Component }: { title: string, Component: React.ReactNode }) {
     const [openOrNot, setOpenOrNot] = useState(false);
     return (
         <>

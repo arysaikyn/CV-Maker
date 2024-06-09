@@ -1,8 +1,8 @@
-import Field from "./Field.jsx";
+import Field from "./Field.js";
 
-function EducationComponent({value, setValue}) {
-    const handleInputChange = (field) => (e) => {
-        setValue(prevValue => ({ ...prevValue, [field]: e.target.value }));
+function EducationComponent({value, setValue}: {value: any, setValue: React.Dispatch<React.SetStateAction<any>>}) {
+    const handleInputChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+        setValue((prevValue: any) => ({ ...prevValue, [field]: e.target.value }));
     };
     return (
         <>
@@ -26,7 +26,7 @@ function EducationComponent({value, setValue}) {
     );
 }
 
-export default function InputEducation({educationInfo, setEducationInfo}) {
+export default function InputEducation({educationInfo, setEducationInfo}: {educationInfo: any, setEducationInfo: React.Dispatch<React.SetStateAction<any>>}) {
     return (
         <Field title="Education" Component={<EducationComponent value={educationInfo} setValue={setEducationInfo} />} />);
 }

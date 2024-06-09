@@ -1,7 +1,21 @@
-import Field from "./Field.jsx";
+import React, { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import Field from "./Field.js";
 
-function PersonalComponent({value, setValue}) {
-    const handleInputChange = (field) => (e) => {
+interface PersonalInfo {
+    name: string;
+    email: string;
+    phone: string;
+    github: string;
+    linkedin: string;
+}
+
+interface PersonalComponentProps {
+    value: PersonalInfo;
+    setValue: Dispatch<SetStateAction<PersonalInfo>>;
+}
+
+function PersonalComponent({value, setValue}: PersonalComponentProps) {
+    const handleInputChange = (field: keyof PersonalInfo) => (e: ChangeEvent<HTMLInputElement>) => {
         setValue(prevValue => ({ ...prevValue, [field]: e.target.value }));
     };
     return (
@@ -30,7 +44,12 @@ function PersonalComponent({value, setValue}) {
     );
 }
 
-export default function InputPersonal({personalInfo, setPersonalInfo}) {
+interface InputPersonalProps {
+    personalInfo: PersonalInfo;
+    setPersonalInfo: Dispatch<SetStateAction<PersonalInfo>>;
+}
+
+export default function InputPersonal({personalInfo, setPersonalInfo}: InputPersonalProps) {
     return (
         <Field title="Personal" Component={<PersonalComponent value={personalInfo} setValue={setPersonalInfo} />} />);
 }
