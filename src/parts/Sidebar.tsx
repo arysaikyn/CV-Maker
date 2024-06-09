@@ -2,7 +2,29 @@ import "../styles/SideBarStyles.css";
 import {InputEducation, InputExperience, InputPersonal, InputProjects, InputTechnicalSkills} from "../components/InputFields.js";
 import {sampleEducationInfo, samplePersonalInfo, sampleExperienceInfo, sampleProjectsInfo, sampleTechnicalSkillsInfo, emptyEducationInfo, emptyPersonalInfo, emptyExperienceInfo, emptyProjectsInfo, emptyTechnicalSkillsInfo} from "./DefaultData.js";
 
-export default function Sidebar({personalInfo, educationInfo, experienceInfo, projectsInfo, technicalSkillsInfo, setPersonalInfo, setEducationInfo, setExperienceInfo, setProjectsInfo, setTechnicalSkillsInfo}){
+export default function Sidebar({
+    personalInfo,
+    educationInfo,
+    experienceInfo,
+    projectsInfo,
+    technicalSkillsInfo,
+    setPersonalInfo,
+    setEducationInfo,
+    setExperienceInfo,
+    setProjectsInfo,
+    setTechnicalSkillsInfo
+}: {
+    personalInfo: any,
+    educationInfo: any,
+    experienceInfo: any,
+    projectsInfo: any,
+    technicalSkillsInfo: any,
+    setPersonalInfo: any,
+    setEducationInfo: any,
+    setExperienceInfo: any,
+    setProjectsInfo: any,
+    setTechnicalSkillsInfo: any
+}) {
     return(
         <aside>
             <div className="buttons">

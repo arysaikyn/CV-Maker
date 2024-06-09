@@ -151,7 +151,7 @@ function InputPart({index, value, setValue}: {index: number, value: any, setValu
 function ExperienceComponent({value, setValue}: {value: any, setValue: Function}) {
     return (
         <>
-            {value.map((item: any, index: number) => {
+            {value.map((_item: any, index: number) => {
               return <InputPart index={index} value={value} setValue={setValue} key={index}/>
             })}
             <button className="newgen" onClick={() => {
