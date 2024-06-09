@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'Computer Modern Serif';
+    src: url('./cmunrm.woff');
+}
+
+
+.main {
+    font-family: 'Computer Modern Serif', serif;
+    font-size: 11pt;
+    font-weight: 500;
+    width: 777px;
+    height: 900px;
+    margin-top: 2rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    align-self: flex-start;
+}
+
+.spacer {
+    margin: 0px auto;
+}
+
+h2 {
+    padding: 0;
+    margin-bottom: 5pt;
+    margin-top: 5pt;
+    border-bottom: 1px solid #000000;
+    text-transform: uppercase;
+    font-size: 11pt;
+    font-weight: normal;
+}
+
+h2::first-letter {
+    font-size: 14pt;
+}
+
+h3 {
+    display: flex;
+    font-size: 11pt;
+    padding: 0;
+    justify-content: space-between;
+}
+
+h1 {
+    text-align: center;
+    font-size: 26pt;
+    margin: 0;
+    padding: 0;
+    margin-top: -0.1in;
+}
+
+h4 {
+    display: flex;
+    font-size: 11pt;
+    font-weight: normal;
+    font-style: italic;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    justify-content: space-between;
+}
+
+.indent {
+    margin-left: 0.15in;
+}
+
+.tech-stack {
+    font-style: normal;
+    font-weight: normal;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: black;
+    text-underline-offset: 4px;
+}
+
+ul {
+    margin: 1pt 0;
+    margin-left: 0.3in;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 11pt;
+}
+
+ul > li {
+    margin-bottom: 1pt;
+}
+
+ul > li:first-child {
+    padding-top: -4px;
+}
+
+ul > li:last-child {
+    margin-bottom: 5pt;
+}
+
+.headerInfo > ul {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0px auto 0pt !important;
+    margin-top: -1pt;
+    padding: 0;
+}
+
+.headerInfo > ul > li {
+    display: inline;
+    white-space: pre;
+    list-style-type: none;
+}
+
+.headerInfo > ul > li:not(:last-child) {
+    margin-right: 8px;
+}
+
+.headerInfo > ul > li:not(:last-child):after {
+    content: "|";
+    margin-left: 8px;
+}
