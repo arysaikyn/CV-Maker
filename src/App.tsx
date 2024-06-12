@@ -3,6 +3,7 @@ import Display from "./parts/Display.tsx";
 import {sampleEducationInfo, samplePersonalInfo, sampleExperienceInfo, sampleProjectsInfo, sampleTechnicalSkillsInfo} from "./parts/DefaultData.tsx";
 import "./App.css";
 import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
 
 export default function App(){
   const [personalInfo, setPersonalInfo] = useState(samplePersonalInfo);
@@ -34,6 +35,14 @@ export default function App(){
           technicalSkillsInfo={technicalSkillsInfo}
         />
       </main>
+      <a href="https://github.com/arysaikyn/CV-Maker">
+        <FaGithub style={{
+          position: "absolute",
+          top: "20px",
+          right: "20px",
+          scale: "2"
+        }}></FaGithub>
+      </a>
     </>
   )
 }
