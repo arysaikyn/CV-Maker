@@ -59,10 +59,10 @@ export default function Display({
 
             <div className="section headerInfo">
                 <ul>
-                    <li>{personalInfo.phone}</li>
+                    <li><a href={`tel:${personalInfo.phone}`}>{personalInfo.phone}</a></li>
                     <li><a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a></li>
-                    <li><a href={personalInfo.linkedin}>{personalInfo.linkedin}</a></li>
-                    <li><a href={personalInfo.github}>{personalInfo.github}</a></li>
+                    <li><a href={"https://" + personalInfo.linkedin}>{personalInfo.linkedin}</a></li>
+                    <li><a href={"https://" + personalInfo.github}>{personalInfo.github}</a></li>
                 </ul>
             </div>
 
