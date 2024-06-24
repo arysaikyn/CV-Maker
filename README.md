@@ -1,32 +1,3 @@
-<h1 align="center">Welcome to  👋</h1>
-<p>
-  <a href="https://twitter.com/arysaikyn" target="_blank">
-    <img alt="Twitter: arysaikyn" src="https://img.shields.io/twitter/follow/arysaikyn.svg?style=social" />
-  </a>
-</p>
-
-> A simple CV Maker
-
-### ✨ [Demo](cv-maker-delta-ten.vercel.app)
-
-## Install
-
-```sh
-npm install
-```
-
-## Author
-
-👤 **Arys Aikyn**
-
-* Twitter: [@arysaikyn](https://twitter.com/arysaikyn)
-* Github: [@arysaikyn](https://github.com/arysaikyn)
-* LinkedIn: [@arysaikyn](https://linkedin.com/in/arysaikyn)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
 # 📄 CV-Maker
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/arysaikyno/CV-Maker#readme)
